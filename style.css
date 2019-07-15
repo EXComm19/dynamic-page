@@ -31,7 +31,7 @@ body {
 
 #content {
     width: 100vw;
-    background-color: rgba(0, 0, 0, .30)
+    background-color: rgba(0, 0, 0, .30);
 }
 
 #focusLabel {
@@ -47,6 +47,11 @@ h1 {
 h2 {
     margin-bottom: 3rem;
     opacity: 0.8;
+    border-bottom-color: white;
+    border-bottom-width: 1.5px;
+    border-bottom-style: solid;
+    margin-left: 20%;
+    margin-right: 20%;
 }
 
 h3 {
@@ -64,4 +69,12 @@ h3 {
     #amPm {
         font-size: 2rem
     }
+}
+
+[contenteditable]:focus {
+    outline: 0px solid transparent;
+}
+
+span[contenteditable]:focus {
+    background-color: rgba(100, 100, 200, 0.50)
 }

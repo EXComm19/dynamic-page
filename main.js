@@ -9,7 +9,14 @@ window.onload = function () {
         bg = document.body.style,
         content = document.getElementById('content')
 
-    name.textContent = localStorage.getItem('name')
+    console.log(localStorage.getItem('name'));
+        
+
+    if (localStorage.getItem('name') == "" || localStorage.getItem('name') == null) {
+        name.textContent = "Name"
+    } else {
+        name.textContent = localStorage.getItem('name')
+    }
     focus.innerHTML = localStorage.getItem('focus')
 
     name.addEventListener('input', () => {
@@ -19,7 +26,7 @@ window.onload = function () {
 
     focus.addEventListener('input', () => {
         const focusValue = focus.innerHTML
-        
+
         localStorage.setItem('focus', focusValue)
     })
 
