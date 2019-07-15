@@ -9,9 +9,6 @@ window.onload = function () {
         bg = document.body.style,
         content = document.getElementById('content')
 
-    console.log(localStorage.getItem('name'));
-        
-
     if (localStorage.getItem('name') == "" || localStorage.getItem('name') == null) {
         name.textContent = "Name"
     } else {
