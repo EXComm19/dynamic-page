@@ -63,7 +63,6 @@ window.onload = function () {
         secSpan.textContent = `:${sec} `
         amPm.textContent = period
 
-
         //Loop
         setTimeout(() => {
             startTime()
@@ -82,21 +81,21 @@ window.onload = function () {
         //Set the background to relatable images
         //Change overlay and text colour
 
-        if (hour > 5 && hour < 12) {
+        if (hour >= 5 && hour < 12) {
             context = "morning"
 
             greeting.textContent = "Good Morning , "
             bg.backgroundImage = "url('https://source.unsplash.com/1920x1080/?morning,sun')"
-            content.style.backgroundColor = "rgba(255,255,255,.50)"
+            content.style.backgroundColor = "rgba(255,255,255,.50)"           
 
-        } else if (hour > 12 && hour < 17) {
+        } else if (hour >= 12 && hour < 17) {
             context = "afternoon"
 
             greeting.textContent = "Good Afternoon , "
             bg.backgroundImage = "url('https://source.unsplash.com/1920x1080/?sunny,scenery')"
             content.style.backgroundColor = "rgba(255,255,255,.70)"
 
-        } else if (hour > 17 && hour < 20) {
+        } else if (hour >= 17 && hour < 20) {
             context = "evening"
 
             greeting.textContent = "Good Evening , "
