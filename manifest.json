@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Better Momentum",
-    "version": "1.5",
+    "version": "1.5.1",
 
     "chrome_url_overrides": {
         "newtab": "index.html"
