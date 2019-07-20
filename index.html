@@ -6,14 +6,52 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Tab</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <script src="/jquery-3.4.1.min.js"></script>
-    <script src="main.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <script defer src="main.js"></script>
+    <script src="shortcut.js"></script>
 </head>
 
 <body>
+    <div style="background-color: c5cae9"></div>
     <a href="https://page.excomm19.xyz/info/" target="_blank"><button id="info">i</button></a>
+
+    <div class="shortcut">
+        <span id="icons">
+            <!-- <a class="icons btn-small btn-floating waves-effect white z-depth-3" href="https://www.google.com"
+                target="_blank" style="background-image: url('https://www.google.com/favicon.ico')">
+            </a> -->
+        </span>
+        <a id="add" class="waves-effect btn-floating modal-trigger grey lighten-3 btn-small add" href="#modal">
+            <i class="material-icons black-text">add</i>
+        </a>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <form id="add-shortcut">
+                <div class="input-field">
+                    <label for="url">URL</label>
+                    <input type="url" id="url">
+                </div>
+                <div class="input-field">
+                    <label for="url-name">Name</label>
+                    <input type="text" id="url-name">
+                </div>
+                <button id="submit" class="modal-close" type="submit"></button>
+                <button type="reset" id="reset"></button>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a id="close" class="modal-close waves-effect btn-flat">Add</a>
+        </div>
+    </div>
+
 
     <div id="content">
         <div>
@@ -22,13 +60,13 @@
             <span id="amPm"></span>
         </div>
 
-        <h1>
+        <div class="greet">
             <span id="greeting"></span>
             <span id="name" contenteditable="true">Name</span>
-        </h1>
+        </div>
 
-        <h3 id="focusLabel">What is Your Focus Today ?</h2>
-            <h2 id="focus" contenteditable="true"></h2>
+        <div id="focusLabel">What is Your Focus Today ?</div>
+        <div id="focus" contenteditable="true"></div>
     </div>
 
     <p id="quote">Quote</p>

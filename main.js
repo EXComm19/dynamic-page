@@ -1,4 +1,7 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", () => {
+    
+    //Display Part
+
     const handm = document.getElementById('handm'),
         secSpan = document.getElementById('sec'),
         amPm = document.getElementById('amPm'),
@@ -18,7 +21,7 @@ window.onload = function () {
     focus.innerHTML = localStorage.getItem('focus')
 
     //Get quote of the day
-    $.getJSON("http://quotes.rest/qod.json",(data) => {
+    $.getJSON("http://quotes.rest/qod.json", (data) => {
         quote.textContent = `${data.contents.quotes[0].quote} —— ${data.contents.quotes[0].author}`
         console.log(data.contents.quotes[0].quote);
     })
@@ -86,7 +89,8 @@ window.onload = function () {
 
             greeting.textContent = "Good Morning , "
             bg.backgroundImage = "url('https://source.unsplash.com/1920x1080/?morning,sun')"
-            content.style.backgroundColor = "rgba(255,255,255,.50)"           
+            content.style.backgroundColor = "rgba(255,255,255,.50)"
+
 
         } else if (hour >= 12 && hour < 17) {
             context = "afternoon"
@@ -115,4 +119,4 @@ window.onload = function () {
     //Activate initial function and start clock
     startTime()
     setContext()
-}
+})
