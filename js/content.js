@@ -1,7 +1,3 @@
-document.addEventListener("DOMContentLoaded", () => {
-    
-    //Display Part
-
     const handm = document.getElementById('handm'),
         secSpan = document.getElementById('sec'),
         amPm = document.getElementById('amPm'),
@@ -119,4 +115,3 @@ document.addEventListener("DOMContentLoaded", () => {
     //Activate initial function and start clock
     startTime()
     setContext()
-})

@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log(browser.theme.getCurrent());
-    
-
     const classes = ["icons", "btn-small", "btn-floating", "waves-effect", "white", "z-depth-3", "tooltipped"]
 
     const add = document.getElementById('add')
@@ -26,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     close.addEventListener('click', (e) => {
-        submit.submit()
+        submit.click()
     })
 
     addForm.addEventListener('submit', (e) => {
@@ -52,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         list.appendChild(shortcut)
         reset.click()
         M.AutoInit()
+        addDel()
         localStorage.setItem('icons', list.innerHTML)
     })
 
@@ -65,4 +62,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-})
+    function addDel() {
+        $(".icons").on('click', (e) => {
+            if (longpress) {
+                e.preventDefault()
+                e.target.parentNode.removeChild(e.target)
+                localStorage.setItem('icons', list.innerHTML)
+            }
+        });
+
+        $(".icons").on('mousedown', (e) => {
+            startTime = new Date().getTime();
+            e.target.classList.add('wiggle')
+        });
+
+        $(".icons").on('mouseup', (e) => {
+            e.target.classList.remove('wiggle')
+            endTime = new Date().getTime();
+            longpress = (endTime - startTime > 500) ? true : false;
+        });
+    }
+
+    addDel()
