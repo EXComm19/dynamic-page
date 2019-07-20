@@ -42,7 +42,6 @@
         shortcut.setAttribute('data-position', 'bottom')
         shortcut.setAttribute('data-tooltip', urlName.value)
         shortcut.href = url.value
-        shortcut.target = '_blank'
         shortcut.style.backgroundImage = `url(${icon})`
 
         list.appendChild(shortcut)
